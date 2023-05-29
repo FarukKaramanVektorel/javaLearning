@@ -15,5 +15,16 @@ public class BreakExample {
         } else {
             System.out.println("Değer bulunamadı.");
         }
+
+        //1 den başlayarak sayıları toplayan ve 100 ü geçince ekrana yazdıran program
+        int sum = 0;
+        for (int i = 1; i <= 100; i++) {
+            sum += i;
+            if (sum > 100) {
+                break;
+            }
+        }
+
+        System.out.println("Toplamı 100'ü geçen sayı: " + sum);
     }
 }
