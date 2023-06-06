@@ -3,11 +3,10 @@ import java.util.Scanner;
 public class SimpleATMApp {
     private static double bakiye = 1000; // Başlangıç bakiyesi
     private static int islem = 0;
+    private static  Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {       
         System.out.println("ATM'ye Hoş Geldiniz!");
-
         do {
             System.out.println("-----------------------------");
             System.out.println("Lütfen yapmak istediğiniz işlemi seçin:");
@@ -17,7 +16,6 @@ public class SimpleATMApp {
             System.out.println("4. Çıkış");
             System.out.print("Seçiminizi yapın (1-4): ");
             int secim = scanner.nextInt();
-
             switch (secim) {
                 case 1:
                     bakiyeGoruntuleme();
@@ -45,11 +43,9 @@ public class SimpleATMApp {
     }
 
     public static void paraCekme() {
-        islem=1;
-        Scanner scanner = new Scanner(System.in);
+        islem=1;        
         System.out.print("Çekmek istediğiniz tutarı girin: ");
         double tutar = scanner.nextDouble();
-
         if (tutar > bakiye) {
             System.out.println("Yetersiz bakiye!");
         } else {
@@ -61,10 +57,8 @@ public class SimpleATMApp {
 
     public static void paraYatirma() {
         islem=1;
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Yatırmak istediğiniz tutarı girin: ");
         double tutar = scanner.nextDouble();
-
         if (tutar <= 0) {
             System.out.println("Geçersiz tutar!");
         } else {
